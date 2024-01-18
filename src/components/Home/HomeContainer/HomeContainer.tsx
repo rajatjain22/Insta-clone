@@ -1,10 +1,13 @@
+import MainContentContainer from '@/components/MainContent.tsx/MainContentContainer';
 import SideNavContainer from '@/components/SideNav/SideNavContainer';
+import TopNavContainer from '@/components/TopNav/TopNavContainer';
 
 export default function HomeContainer() {
 	return (
-		<div className='flex min-h-screen w-full'>
+		<div className='flex flex-col md:flex-row min-h-screen w-full'>
+			<TopNavContainer />
 			<SideNavContainer />
-            <div className='w-4/5'>wjahgh</div>
+			<MainContentContainer />
 		</div>
 	);
 }
