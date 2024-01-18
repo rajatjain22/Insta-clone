@@ -3,7 +3,7 @@ import UserContainer from '../User/UserContainer';
 
 export default function SuggestionContainer() {
 	return (
-		<div className=' min-h-screen w-80 p-5'>
+		<div className='hidden lg:block min-h-screen w-80 p-5'>
 			<UserContainer />
 			<div>
 				<div className='flex justify-between items-center p-2'>

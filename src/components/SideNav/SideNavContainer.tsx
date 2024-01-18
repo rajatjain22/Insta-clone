@@ -14,11 +14,11 @@ import { FaInstagram } from 'react-icons/fa';
 
 export default function SideNavContainer() {
 	return (
-		<div className='flex flex-col md:w-1/5 min-w-24 max-w-64 border border-r-stone-200 p-2'>
+		<div className='hidden md:flex flex-col lg:w-1/5 min-w-24 max-w-64 border border-r-stone-200 p-2'>
 			<div className='w-full'>
 				<div className=' italic font-semibold p-5 flex justify-center'>
-					<FaInstagram className='md:hidden text-3xl'/>
-					<span className='hidden md:block'>
+					<FaInstagram className='lg:hidden text-3xl'/>
+					<span className='hidden lg:block'>
 						<svg
 							aria-label='Instagram'
 							className='x1lliihq x1n2onr6 x5n08af'
@@ -59,21 +59,21 @@ export default function SideNavContainer() {
 				].map((item, index) => (
 					<div
 						key={index}
-						className='relative text-base flex items-center w-full p-2 justify-center md:justify-start'>
+						className='relative text-base flex items-center w-full p-2 justify-center lg:justify-start'>
 						{item.icon}
-						<span className='p-2 hidden md:block'>{item.label}</span>
-						{item.label === 'Messages' && <span className='absolute border rounded-full bg-[red] text-white w-4 h-4 flex justify-center items-center text-xs top-1 left-10 md:top-3 md:left-5'>9</span>}
+						<span className='p-2 hidden lg:block'>{item.label}</span>
+						{item.label === 'Messages' && <span className='absolute border rounded-full bg-[red] text-white w-4 h-4 flex justify-center items-center text-xs top-1 left-10 lg:top-3 lg:left-5'>9</span>}
 					</div>
 				))}
 			</div>
 			<div className='w-full h-full flex flex-col justify-end'>
-				<div className='text-base flex items-center w-full p-2 justify-center md:justify-start'>
+				<div className='text-base flex items-center w-full p-2 justify-center lg:justify-start'>
 					<SiThreads className='text-2xl' />
-					<span className='p-2 hidden md:block'>Threads</span>
+					<span className='p-2 hidden lg:block'>Threads</span>
 				</div>
-				<div className='text-base flex items-center w-full p-2 justify-center md:justify-start'>
+				<div className='text-base flex items-center w-full p-2 justify-center lg:justify-start'>
 					<IoReorderThreeOutline className='text-2xl' />
-					<span className='p-2 hidden md:block'>More</span>
+					<span className='p-2 hidden lg:block'>More</span>
 				</div>
 			</div>
 		</div>

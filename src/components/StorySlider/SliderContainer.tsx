@@ -12,10 +12,18 @@ export default function SliderContainer() {
 		slidesToShow: 5,
 		slidesToScroll: 1,
 		swipeToSlide: true,
-		initialSlide: 0,
+		responsive:[
+			{
+				breakpoint: 480,
+				settings: {
+				  slidesToShow: 5,
+				  slidesToScroll: 1
+				}
+			  }]
 	};
 	return (
-		<div className='story-slider block w-[500px] pt-2'>
+
+		<div className='story-slider block w-full pt-2 mb-2'>
 			<Slider {...settings}>
 				{new Array(20).fill(0).map((_, index) => (
 					<div
@@ -24,7 +32,7 @@ export default function SliderContainer() {
 						<Image
 							src='https://i.pravatar.cc/150?img=3'
 							alt='profile image'
-							className='w-12 h-12 border rounded-full m-auto'
+							className='w-12 h-12 border rounded-full m-auto p-px border-2 border-red-600'
 							width={100}
 							height={100}
 						/>
