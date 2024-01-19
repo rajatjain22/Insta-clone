@@ -1,9 +1,14 @@
+'use client'
+
+import Link from 'next/link';
 import { FiHeart } from 'react-icons/fi';
-import { FaRegSquarePlus } from "react-icons/fa6";
+import { RiMessengerLine } from 'react-icons/ri';
+import { usePathname } from 'next/navigation';
 
 export default function TopNavContainer() {
+	const pathName = usePathname();
 	return (
-		<div className='md:hidden flex justify-between items-center h-14 p-3 bg-white border-b border-solid border-gray-300'>
+		<div className='md:hidden flex justify-between items-center h-14 p-3 bg-white border-b border-solid border-gray-300 sticky top-0 w-full z-10'>
 			<div>
 				<svg
 					aria-label='Instagram'
@@ -22,8 +27,13 @@ export default function TopNavContainer() {
 				</svg>
 			</div>
 			<div className='flex text-2xl gap-4'>
-				<FaRegSquarePlus />
-				<FiHeart />
+				<FiHeart className='m-2' />
+				<Link href={'/messages'} className='relative'>
+					<RiMessengerLine className='m-2' />
+					<span className='absolute border rounded-full bg-[red] text-white w-4 h-4 flex justify-center items-center text-xs top-1 left-5'>
+						9
+					</span>
+				</Link>
 			</div>
 		</div>
 	);

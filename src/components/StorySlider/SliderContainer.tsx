@@ -12,17 +12,19 @@ export default function SliderContainer() {
 		slidesToShow: 5,
 		slidesToScroll: 1,
 		swipeToSlide: true,
-		responsive:[
+		responsive: [
 			{
 				breakpoint: 480,
 				settings: {
-				  slidesToShow: 5,
-				  slidesToScroll: 1
-				}
-			  }]
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					swipeToSlide: true,
+				},
+			},
+			
+		],
 	};
 	return (
-
 		<div className='story-slider block w-full pt-2 mb-2'>
 			<Slider {...settings}>
 				{new Array(20).fill(0).map((_, index) => (

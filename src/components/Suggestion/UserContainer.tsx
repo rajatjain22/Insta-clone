@@ -1,8 +1,10 @@
+
+
+
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
-function UserContainer() {
+export default function UserContainer() {
 	return (
 		<div className='h-16 w-full flex items-center p-2'>
 			<div className='flex items-center w-60'>
@@ -26,5 +28,3 @@ function UserContainer() {
 		</div>
 	);
 }
-
-export default UserContainer;

@@ -1,3 +1,5 @@
+'use client';
+
 import { GoHomeFill } from 'react-icons/go';
 import { IoIosSearch } from 'react-icons/io';
 import {
@@ -5,20 +7,29 @@ import {
 	MdOutlineSlowMotionVideo,
 	MdAddCircleOutline,
 } from 'react-icons/md';
-import { TbMessageCircle2 } from 'react-icons/tb';
+import { RiMessengerLine, RiMessengerFill } from 'react-icons/ri';
 import { FiHeart } from 'react-icons/fi';
 import { CgProfile } from 'react-icons/cg';
 import { SiThreads } from 'react-icons/si';
 import { IoReorderThreeOutline } from 'react-icons/io5';
 import { FaInstagram } from 'react-icons/fa';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function SideNavContainer() {
+	const pathName = usePathname();
 	return (
-		<div className='hidden md:flex flex-col lg:w-1/5 min-w-24 max-w-64 border border-r-stone-200 p-2'>
-			<div className='w-full'>
+		<div
+			className={`hidden md:flex flex-col min-w-24 max-w-64 border border-r-stone-200 p-2 lg:w-1/5 h-screen overflow-y-scroll`}>
+			{/* // pathName !== '/' ? 'w-1/5' : 'lg:w-1/5' */}
+			<div className='w-full hover:bg-[rgba(0,0,0,.05)] hover:rounded-lg'>
 				<div className=' italic font-semibold p-5 flex justify-center'>
-					<FaInstagram className='lg:hidden text-3xl'/>
-					<span className='hidden lg:block'>
+					<FaInstagram
+						className={`lg:hidden text-3xl`}
+						// className={`${pathName === '/' && 'lg:hidden'} text-3xl`}
+					/>
+					<span className={`hidden lg:block`}>
+						{/* className={`${pathName !== '/' ? 'hidden' : 'hidden lg:block'}`}> */}
 						<svg
 							aria-label='Instagram'
 							className='x1lliihq x1n2onr6 x5n08af'
@@ -39,39 +50,69 @@ export default function SideNavContainer() {
 			</div>
 			<div className='w-full'>
 				{[
-					{ icon: <GoHomeFill className='text-2xl' />, label: 'Home' },
-					{ icon: <IoIosSearch className='text-2xl' />, label: 'Search' },
-					{ icon: <MdOutlineExplore className='text-2xl' />, label: 'Explore' },
+					{
+						icon: <GoHomeFill className='text-2xl' />,
+						label: 'Home',
+						path: '/',
+					},
+					{
+						icon: <IoIosSearch className='text-2xl' />,
+						label: 'Search',
+						path: '#',
+					},
+					{
+						icon: <MdOutlineExplore className='text-2xl' />,
+						label: 'Explore',
+						path: '#',
+					},
 					{
 						icon: <MdOutlineSlowMotionVideo className='text-2xl' />,
 						label: 'Reels',
+						path: '#',
 					},
 					{
-						icon: <TbMessageCircle2 className='text-2xl' />,
+						icon: <RiMessengerLine className='text-2xl' />,
 						label: 'Messages',
+						path: '/messages',
 					},
-					{ icon: <FiHeart className='text-2xl' />, label: 'Notifications' },
+					{
+						icon: <FiHeart className='text-2xl' />,
+						label: 'Notifications',
+						path: '#',
+					},
 					{
 						icon: <MdAddCircleOutline className='text-2xl' />,
 						label: 'Create',
+						path: '#',
 					},
-					{ icon: <CgProfile className='text-2xl' />, label: 'Profile' },
+					{
+						icon: <CgProfile className='text-2xl' />,
+						label: 'Profile',
+						path: '#',
+					},
 				].map((item, index) => (
-					<div
+					<Link
+						href={item.path}
 						key={index}
-						className='relative text-base flex items-center w-full p-2 justify-center lg:justify-start'>
+						className='relative text-base flex items-center w-full p-2 justify-center lg:justify-start hover:bg-[rgba(0,0,0,.05)] hover:rounded-lg'>
 						{item.icon}
-						<span className='p-2 hidden lg:block'>{item.label}</span>
-						{item.label === 'Messages' && <span className='absolute border rounded-full bg-[red] text-white w-4 h-4 flex justify-center items-center text-xs top-1 left-10 lg:top-3 lg:left-5'>9</span>}
-					</div>
+						{/* {pathName === '/' && ( */}
+							<span className='p-2 hidden lg:block'>{item.label}</span>
+						{/* )} */}
+						{item.label === 'Messages' && (
+							<span className='absolute border rounded-full bg-[red] text-white w-4 h-4 flex justify-center items-center text-xs top-1 left-10 lg:top-3 lg:left-5'>
+								9
+							</span>
+						)}
+					</Link>
 				))}
 			</div>
 			<div className='w-full h-full flex flex-col justify-end'>
-				<div className='text-base flex items-center w-full p-2 justify-center lg:justify-start'>
+				<div className='text-base flex items-center w-full p-2 justify-center lg:justify-start hover:bg-[rgba(0,0,0,.05)] hover:rounded-lg'>
 					<SiThreads className='text-2xl' />
 					<span className='p-2 hidden lg:block'>Threads</span>
 				</div>
-				<div className='text-base flex items-center w-full p-2 justify-center lg:justify-start'>
+				<div className='text-base flex items-center w-full p-2 justify-center lg:justify-start hover:bg-[rgba(0,0,0,.05)] hover:rounded-lg'>
 					<IoReorderThreeOutline className='text-2xl' />
 					<span className='p-2 hidden lg:block'>More</span>
 				</div>
