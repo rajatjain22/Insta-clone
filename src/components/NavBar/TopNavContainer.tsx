@@ -9,7 +9,7 @@ export default function TopNavContainer() {
 	const pathName = usePathname();
 	return (
 		<div className='md:hidden flex justify-between items-center h-14 p-3 bg-white border-b border-solid border-gray-300 sticky top-0 w-full z-10'>
-			<div>
+			<Link href='/'>
 				<svg
 					aria-label='Instagram'
 					className='x1lliihq x1n2onr6 x5n08af'
@@ -25,7 +25,7 @@ export default function TopNavContainer() {
 						fill='currentColor'
 						fillRule='evenodd'></path>
 				</svg>
-			</div>
+			</Link>
 			<div className='flex text-2xl gap-4'>
 				<FiHeart className='m-2' />
 				<Link href={'/messages'} className='relative'>

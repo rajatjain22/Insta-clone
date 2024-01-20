@@ -1,5 +1,5 @@
 import SideNavContainer from '@/components/NavBar/SideNavContainer';
-import UserContainer from '../Suggestion/UserContainer';
+import UserContainer from '../../Suggestion/UserContainer';
 
 export default function SuggestionContainer() {
 	return (
