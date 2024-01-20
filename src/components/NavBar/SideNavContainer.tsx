@@ -88,7 +88,7 @@ export default function SideNavContainer() {
 					{
 						icon: <CgProfile className='text-2xl' />,
 						label: 'Profile',
-						path: '#',
+						path: '/profile',
 					},
 				].map((item, index) => (
 					<Link

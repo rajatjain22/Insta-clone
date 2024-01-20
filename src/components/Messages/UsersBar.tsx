@@ -1,5 +1,3 @@
-'use client';
-
 import { FaRegEdit } from 'react-icons/fa';
 import UserInfo from './UserInfo';
 
