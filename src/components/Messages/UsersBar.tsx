@@ -1,11 +1,37 @@
+'use client';
+
 import { FaRegEdit } from 'react-icons/fa';
 import UserInfo from './UserInfo';
+import useResponsive from '@/hooks/useResponsive';
+import { FaArrowLeftLong } from 'react-icons/fa6';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function UsersBar() {
+	const { windowWidth, isMobile, isTablet, isMini, isDesktop } =
+		useResponsive();
+	const pathName = usePathname();
+	// console.log(windowWidth, isMobile,isTablet,isMini, isDesktop)
+
+	if (isMobile || isTablet) {
+		if (pathName === '/messages') {
+			console.log('Mobile>>> SHOW use full screen');
+		} else {
+			console.log('Mobile>>> Hide');
+		}
+	} else {
+		console.log('Show Both');
+	}
 	return (
-		<div className='h-screen w-80 p-5 border border-r-1'>
+		<div
+			className={`${
+				(isMobile || isTablet) ? (pathName === '/messages' ? 'block' : 'hidden') : 'block'
+			} h-screen w-full md:w-80 p-5 border border-r-1`}>
 			<div className='flex flex-col h-full'>
 				<div className='flex justify-between items-center pt-3 pb-2 px-1'>
+					<Link href='/' className='md:hidden'>
+						<FaArrowLeftLong />
+					</Link>
 					<span className='text-base font-bold'>rajat_j_a_i_n_</span>
 					<FaRegEdit className='text-xl' />
 				</div>

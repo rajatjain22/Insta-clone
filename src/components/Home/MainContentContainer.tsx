@@ -1,7 +1,7 @@
 import SuggestionContainer from './SuggestionContainer';
-import SliderContainer from '../../StorySlider/SliderContainer';
+import SliderContainer from '../StorySlider/SliderContainer';
 import PostContainer from './PostContainer';
-import SwiperSliderContainer from '../../StorySlider/SwiperSliderContainer';
+import SwiperSliderContainer from '../StorySlider/SwiperSliderContainer';
 
 export default function MainContentContainer() {
 	return (

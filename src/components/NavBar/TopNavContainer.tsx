@@ -1,14 +1,29 @@
-'use client'
+'use client';
 
 import Link from 'next/link';
 import { FiHeart } from 'react-icons/fi';
 import { RiMessengerLine } from 'react-icons/ri';
-import { usePathname } from 'next/navigation';
+import {
+	usePathname,
+	useParams,
+	useSearchParams,
+	useSelectedLayoutSegment,
+	useSelectedLayoutSegments,
+} from 'next/navigation';
 
 export default function TopNavContainer() {
 	const pathName = usePathname();
+	const searchParams = useSearchParams();
+	const segment = useSelectedLayoutSegment();
+	const segments = useSelectedLayoutSegments();
+	const params = useParams();
+
+	console.log(segment, segments, params);
 	return (
-		<div className='md:hidden flex justify-between items-center h-14 p-3 bg-white border-b border-solid border-gray-300 sticky top-0 w-full z-10'>
+		<div
+			className={`${
+				pathName !== '/' ? 'hidden' : ''
+			} md:hidden flex justify-between items-center h-14 p-3 bg-white border-b border-solid border-gray-300 sticky top-0 w-full z-10`}>
 			<Link href='/'>
 				<svg
 					aria-label='Instagram'
@@ -28,7 +43,9 @@ export default function TopNavContainer() {
 			</Link>
 			<div className='flex text-2xl gap-4'>
 				<FiHeart className='m-2' />
-				<Link href={'/messages'} className='relative'>
+				<Link
+					href={'/messages'}
+					className='relative'>
 					<RiMessengerLine className='m-2' />
 					<span className='absolute border rounded-full bg-[red] text-white w-4 h-4 flex justify-center items-center text-xs top-1 left-5'>
 						9
