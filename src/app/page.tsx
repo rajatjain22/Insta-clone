@@ -1,4 +1,4 @@
-import HomeContainer from '@/components/Home/HomeContainer/HomeContainer';
+import HomeContainer from '@/components/Home/HomeContainer';
 
 export default function Home() {
 	return <HomeContainer />;
