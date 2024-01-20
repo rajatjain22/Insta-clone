@@ -51,9 +51,9 @@ export default function SwiperSliderContainer() {
 				<SwiperSlide key={index}>
 					<div className='p-2 text-center'>
 						<Image
-							src='https://i.pravatar.cc/150?img=3'
+							src={`https://i.pravatar.cc/150?img=${index}`}
 							alt='profile image'
-							className='w-12 h-12 border rounded-full m-auto p-px border-2 border-red-600'
+							className='w-12 h-12 rounded-full m-auto p-px border-2 border-red-600'
 							width={100}
 							height={100}
 						/>

@@ -14,7 +14,9 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        'follow-blue':'#0090ff'
+        'follow-blue':'#0090ff',
+        'gray-hover':'rgba(0,0,0,.05)',
+        'profile-border':'#e2e2e2'
       }
     },
   },

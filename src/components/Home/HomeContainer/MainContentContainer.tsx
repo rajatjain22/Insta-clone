@@ -1,7 +1,7 @@
 import SuggestionContainer from './SuggestionContainer';
-import SliderContainer from '../StorySlider/SliderContainer';
+import SliderContainer from '../../StorySlider/SliderContainer';
 import PostContainer from './PostContainer';
-import SwiperSliderContainer from '../StorySlider/SwiperSliderContainer';
+import SwiperSliderContainer from '../../StorySlider/SwiperSliderContainer';
 
 export default function MainContentContainer() {
 	return (
@@ -10,7 +10,7 @@ export default function MainContentContainer() {
 				{/* <SliderContainer /> */}
 				<SwiperSliderContainer />
 				{new Array(20).fill(0).map((val, index) => (
-					<PostContainer key={index} />
+					<PostContainer key={index} imageKey={index}/>
 				))}
 			</div>
 			<SuggestionContainer />
