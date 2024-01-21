@@ -31,7 +31,8 @@ export default function PostContainer({ imageKey }: { imageKey: number }) {
 				</div>
 				<div className='max-h-96 border border-solid border-gray-600'>
 					<Image
-						src={`https://i.pravatar.cc/150?img=${imageKey}`}
+						src={`https://flowbite.s3.amazonaws.com/docs/gallery/square/image-${imageKey}.jpg`}
+						// src={`https://i.pravatar.cc/150?img=${imageKey}`}
 						alt='profile image'
 						className='w-full h-fit'
 						width={100}

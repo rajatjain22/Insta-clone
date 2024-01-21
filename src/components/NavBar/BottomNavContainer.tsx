@@ -4,12 +4,24 @@ import Link from 'next/link';
 import { CgProfile } from 'react-icons/cg';
 import { GoHomeFill } from 'react-icons/go';
 import { IoIosSearch } from 'react-icons/io';
-import { MdAddCircleOutline, MdOutlineSlowMotionVideo } from 'react-icons/md';
-import { useParams, usePathname, useSearchParams, useSelectedLayoutSegment, useSelectedLayoutSegments } from 'next/navigation';
+import {
+	MdAddCircleOutline,
+	MdOutlineSlowMotionVideo,
+	MdOutlineLogout,
+} from 'react-icons/md';
+import {
+	useParams,
+	usePathname,
+	useSearchParams,
+	useSelectedLayoutSegment,
+	useSelectedLayoutSegments,
+	useRouter
+} from 'next/navigation';
 
 export default function BottomNavContainer() {
 	const pathName = usePathname();
 	const params = useParams();
+	const Router = useRouter();
 	return (
 		<div
 			className={`${
@@ -30,6 +42,14 @@ export default function BottomNavContainer() {
 			<Link href={'/profile'}>
 				<CgProfile className='m-2' />
 			</Link>
+			<div
+				className='cursor-pointor'
+				onClick={() => {
+					window.localStorage.clear();
+					Router.push('/login')
+				}}>
+				<MdOutlineLogout className='m-2' />
+			</div>
 		</div>
 	);
 }

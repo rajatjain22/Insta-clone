@@ -103,14 +103,19 @@ export default function SideNavContainer() {
 					))}
 				</div>
 				<div className='w-full h-full flex flex-col justify-end'>
-					<div className='text-base flex items-center w-full p-2 justify-center lg:justify-start hover:bg-[rgba(0,0,0,.05)] hover:rounded-lg'>
+					<Link
+						href={'#'}
+						className='text-base flex items-center w-full p-2 justify-center lg:justify-start hover:bg-[rgba(0,0,0,.05)] hover:rounded-lg'>
 						<SiThreads className='text-2xl' />
 						<span className='p-2 hidden lg:block'>Threads</span>
-					</div>
-					<div className='text-base flex items-center w-full p-2 justify-center lg:justify-start hover:bg-[rgba(0,0,0,.05)] hover:rounded-lg'>
+					</Link>
+					<Link
+						href={'#'}
+						className='text-base flex items-center w-full p-2 justify-center lg:justify-start hover:bg-[rgba(0,0,0,.05)] hover:rounded-lg'>
 						<IoReorderThreeOutline className='text-2xl' />
-						<span className='p-2 hidden lg:block'>More</span>
-					</div>
+						{/* <span className='p-2 hidden lg:block'>More</span> */}
+						<span className='p-2 hidden lg:block'>Logout</span>
+					</Link>
 				</div>
 			</div>
 		</>

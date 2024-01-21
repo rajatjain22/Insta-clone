@@ -21,6 +21,7 @@ export default function LoginContainer() {
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		window.localStorage.setItem('login', 'true');
 		router.push('/');
 	};
 	return (

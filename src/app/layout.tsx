@@ -3,8 +3,6 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import SideNavContainer from '@/components/NavBar/SideNavContainer';
-import TopNavContainer from '@/components/NavBar/TopNavContainer';
 import Provider from './provider';
 
 const inter = Inter({ subsets: ['latin'] });

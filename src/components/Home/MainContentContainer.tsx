@@ -9,7 +9,7 @@ export default function MainContentContainer() {
 			<div className='w-11/12 md:max-w-[490px]'>
 				{/* <SliderContainer /> */}
 				<SwiperSliderContainer />
-				{new Array(20).fill(0).map((val, index) => (
+				{new Array(11).fill(0).map((val, index) => (
 					<PostContainer key={index} imageKey={index + 1}/>
 				))}
 			</div>

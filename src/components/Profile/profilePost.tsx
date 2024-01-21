@@ -48,7 +48,7 @@ export default function ProfilePost() {
 
 			<div>
 				<div className='grid grid-cols-3 md:grid-cols-3 gap-4'>
-					{new Array(20).fill(0).map((imageVal, imageIndex) => (
+					{new Array(11).fill(0).map((imageVal, imageIndex) => (
 						<div
 							className='relative'
 							key={imageIndex}>
