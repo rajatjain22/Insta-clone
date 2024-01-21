@@ -27,7 +27,7 @@ export default function LoginContainer() {
 		<section className='h-screen flex justify-center'>
 			<div className='container h-full'>
 				<div className='g-6 flex h-full  items-center justify-center'>
-					<div className='hidden md:block mb-12 md:mb-0 md:w-8/12 lg:w-6/12'>
+					<div className='hidden md:block mb-12 md:mb-0 md:w-8/12 lg:w-2/5'>
 						<Image
 							src='https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg'
 							className='w-full'
@@ -37,7 +37,7 @@ export default function LoginContainer() {
 						/>
 					</div>
 
-					<div className='w-full md:w-8/12 lg:ml-6 lg:w-5/12 p-2 flex flex-col gap-4'>
+					<div className='w-full sm:w-2/3 lg:w-1/3 lg:ml-6 p-2 flex flex-col gap-4'>
 						<div className='w-full border border-gray-300 p-2 sm:p-10 '>
 							<div className='flex justify-center mb-6'>
 								<svg
