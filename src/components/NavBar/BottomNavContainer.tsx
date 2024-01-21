@@ -1,12 +1,20 @@
+'use client';
+
 import Link from 'next/link';
 import { CgProfile } from 'react-icons/cg';
 import { GoHomeFill } from 'react-icons/go';
 import { IoIosSearch } from 'react-icons/io';
 import { MdAddCircleOutline, MdOutlineSlowMotionVideo } from 'react-icons/md';
+import { useParams, usePathname, useSearchParams, useSelectedLayoutSegment, useSelectedLayoutSegments } from 'next/navigation';
 
 export default function BottomNavContainer() {
+	const pathName = usePathname();
+	const params = useParams();
 	return (
-		<div className='md:hidden flex justify-between items-center h-14 p-3 bg-white border-t border-solid border-gray-300 fixed bottom-0 w-full z-10 text-2xl'>
+		<div
+			className={`${
+				pathName === '/messages' || params?.messageID ? 'hidden' : 'block'
+			} md:hidden flex justify-between items-center h-14 p-3 bg-white border-t border-solid border-gray-300 fixed bottom-0 w-full z-10 text-2xl`}>
 			<Link href={'/'}>
 				<GoHomeFill className='m-2' />
 			</Link>

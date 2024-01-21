@@ -10,7 +10,7 @@ export default function MainContentContainer() {
 				{/* <SliderContainer /> */}
 				<SwiperSliderContainer />
 				{new Array(20).fill(0).map((val, index) => (
-					<PostContainer key={index} imageKey={index}/>
+					<PostContainer key={index} imageKey={index + 1}/>
 				))}
 			</div>
 			<SuggestionContainer />

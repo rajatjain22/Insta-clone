@@ -25,7 +25,7 @@ const UserMessages = ({ messageProp }: UserMessagesProps) => {
   return (
     <div className={`h-full overflow-y-scroll ${styles.customscroll}`}>
       {messageProp.map((msgVal, msgIndex) => (
-        <>
+        <div key={msgIndex}>
           {msgVal.sender === "123" && (
             <div className='sender w-full p-2 inline-block'>
               <div className='relative bg-blue-200 rounded-r-md rounded-tl-md p-3 float-left lg:w-2/3 xl:w-3/4'>
@@ -73,7 +73,7 @@ const UserMessages = ({ messageProp }: UserMessagesProps) => {
             </div>
           )}
           {/* <div ref={messageRef}></div> */}
-        </>
+        </div>
       ))}
     </div>
   );

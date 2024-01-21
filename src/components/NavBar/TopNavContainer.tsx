@@ -3,14 +3,15 @@
 import Link from 'next/link';
 import { FiHeart } from 'react-icons/fi';
 import { RiMessengerLine } from 'react-icons/ri';
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 
 export default function TopNavContainer() {
 	const pathName = usePathname();
+	const params = useParams();
 	return (
 		<div
 			className={`${
-				pathName !== '/' ? 'hidden' : 'block'
+				pathName === '/messages' || params?.messageID ? 'hidden' : 'block'
 			} md:hidden flex justify-between items-center h-14 p-3 bg-white border-b border-solid border-gray-300 sticky top-0 w-full z-10`}>
 			<Link href='/'>
 				<svg
