@@ -3,26 +3,14 @@
 import Link from 'next/link';
 import { FiHeart } from 'react-icons/fi';
 import { RiMessengerLine } from 'react-icons/ri';
-import {
-	usePathname,
-	useParams,
-	useSearchParams,
-	useSelectedLayoutSegment,
-	useSelectedLayoutSegments,
-} from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export default function TopNavContainer() {
 	const pathName = usePathname();
-	const searchParams = useSearchParams();
-	const segment = useSelectedLayoutSegment();
-	const segments = useSelectedLayoutSegments();
-	const params = useParams();
-
-	console.log(segment, segments, params);
 	return (
 		<div
 			className={`${
-				pathName !== '/' ? 'hidden' : ''
+				pathName !== '/' ? 'hidden' : 'block'
 			} md:hidden flex justify-between items-center h-14 p-3 bg-white border-b border-solid border-gray-300 sticky top-0 w-full z-10`}>
 			<Link href='/'>
 				<svg

@@ -10,13 +10,13 @@ export default function BottomNavContainer() {
 			<Link href={'/'}>
 				<GoHomeFill className='m-2' />
 			</Link>
-			<Link href={''}>
+			<Link href={'#'}>
 				<IoIosSearch className='m-2' />
 			</Link>
-			<Link href={''}>
+			<Link href={'#'}>
 				<MdAddCircleOutline className='m-2' />
 			</Link>
-			<Link href={''}>
+			<Link href={'#'}>
 				<MdOutlineSlowMotionVideo className='m-2' />
 			</Link>
 			<Link href={'/profile'}>

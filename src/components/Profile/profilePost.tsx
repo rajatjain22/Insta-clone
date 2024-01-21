@@ -5,7 +5,7 @@ import { CgProfile, CgStories } from 'react-icons/cg';
 
 export default function ProfilePost() {
 	return (
-		<div className=''>
+		<div>
 			<div className='border-t border-b border-gray-hover-200'>
 				<div className='grid grid-cols-3 border-b border-gray-hover-200 py-2'>
 					<div className='flex flex-col items-center justify-center text-xs gap-1'>
@@ -14,11 +14,11 @@ export default function ProfilePost() {
 					</div>
 					<div className='flex flex-col items-center justify-center text-xs gap-1'>
 						<span className='font-bold'>640</span>
-						<span className='text-gray-500 font-normal'>FEED</span>
+						<span className='text-gray-500 font-normal'>FOLLOWERS</span>
 					</div>
 					<div className='flex flex-col items-center justify-center text-xs gap-1'>
 						<span className='font-bold'>293</span>
-						<span className='text-gray-500 font-normal'>TAGGED</span>
+						<span className='text-gray-500 font-normal'>FOLLWOING</span>
 					</div>
 				</div>
 
