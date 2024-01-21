@@ -16,7 +16,8 @@ const config: Config = {
       colors: {
         'follow-blue':'#0090ff',
         'gray-hover':'rgba(0,0,0,.05)',
-        'profile-border':'#e2e2e2'
+        'profile-border':'#e2e2e2',
+        'fb':'#385185'
       }
     },
   },

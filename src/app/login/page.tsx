@@ -1,3 +1,5 @@
-export default function Home() {
-	return <div>Login Component</div>;
+import LoginContainer from "@/components/Login/LoginContainer";
+
+export default function Login() {
+	return <LoginContainer />;
 }
