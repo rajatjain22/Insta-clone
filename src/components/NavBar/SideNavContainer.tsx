@@ -55,7 +55,7 @@ export default function SideNavContainer() {
 						{
 							icon: <IoIosSearch className='text-2xl' />,
 							label: 'Search',
-							path: '#',
+							path: '/search',
 						},
 						{
 							icon: <MdOutlineExplore className='text-2xl' />,

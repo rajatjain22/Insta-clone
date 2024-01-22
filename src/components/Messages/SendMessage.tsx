@@ -37,7 +37,7 @@ export default function SendMessage() {
 
   return (
     <>
-      <div className='flex w-full items-center py-2 min-h-[85px] bg-white fixed bottom-0'>
+      <div className='flex w-full items-center py-2 min-h-[85px] bg-white sticky bottom-0'>
         <MdOutlineEmojiEmotions
           className='hidden text-2xl md:block w-10 cursor-pointer'
           onClick={() =>

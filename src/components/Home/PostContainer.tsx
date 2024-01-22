@@ -1,11 +1,17 @@
+'use client';
+
 import Image from 'next/image';
 import { BsThreeDots, BsDot } from 'react-icons/bs';
 import { FiHeart, FiSend } from 'react-icons/fi';
-import { FaRegComment } from 'react-icons/fa';
+import { FaRegComment, FaHeart } from 'react-icons/fa';
 import { CgStories } from 'react-icons/cg';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function PostContainer({ imageKey }: { imageKey: number }) {
+	const [postValue, setPostValue] = useState({
+		like: true,
+	});
 	return (
 		<div className='w-full flex justify-center mb-2'>
 			<div className='main-post flex flex-col p-2 border-b border-solid border-gray-200'>
@@ -29,12 +35,19 @@ export default function PostContainer({ imageKey }: { imageKey: number }) {
 					</div>
 					<BsThreeDots />
 				</div>
-				<div className='max-h-96 border border-solid border-gray-600'>
+				<div
+					className='max-h-96 border border-solid border-gray-600 cursor-pointer'
+					onDoubleClick={() =>
+						setPostValue((presVal) => ({
+							...presVal,
+							like: !presVal.like,
+						}))
+					}>
 					<Image
 						src={`https://flowbite.s3.amazonaws.com/docs/gallery/square/image-${imageKey}.jpg`}
 						// src={`https://i.pravatar.cc/150?img=${imageKey}`}
 						alt='profile image'
-						className='w-full h-fit'
+						className='aspect-square bg-transparent w-full'
 						width={100}
 						height={100}
 					/>
@@ -42,11 +55,24 @@ export default function PostContainer({ imageKey }: { imageKey: number }) {
 				<div className='p-1'>
 					<div className='flex justify-between pt-3 pb-2'>
 						<div className='flex gap-4'>
-							<FiHeart className='text-xl' />
-							<FaRegComment className='text-xl transform scale-x-[-1]' />
-							<FiSend className='text-xl' />
+							<div
+								className='text-xl cursor-pointer'
+								onClick={() =>
+									setPostValue((presVal) => ({
+										...presVal,
+										like: !presVal.like,
+									}))
+								}>
+								<FiHeart className={`${postValue.like ? 'post-like' : ''}`} />
+							</div>
+							<div>
+								<FaRegComment className='text-xl cursor-pointer transform scale-x-[-1]' />
+							</div>
+							<div className='text-xl cursor-pointer'>
+								<FiSend />
+							</div>
 						</div>
-						<CgStories className='text-xl' />
+						<CgStories className='text-xl cursor-pointer' />
 					</div>
 					<div className='pb-2 text-xs font-semibold'>40,939 likes</div>
 					<div className='pb-2 text-xs'>

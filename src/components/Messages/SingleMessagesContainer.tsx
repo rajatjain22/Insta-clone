@@ -80,7 +80,7 @@ export default function SingleMessagesContainer({
 }) {
 	return (
 		<div className='flex flex-col h-screen overflow-hidden'>
-			<div className='flex justify-between items-center h-14 p-3 bg-white border-b border-solid border-gray-300 fixed top-0 w-full z-10'>
+			<div className='flex justify-between items-center h-14 p-3 bg-white border-b border-solid border-gray-300 sticky top-0 w-full z-10'>
 				<div className='flex items-center gap-2'>
 					<Link
 						href='/messages'
