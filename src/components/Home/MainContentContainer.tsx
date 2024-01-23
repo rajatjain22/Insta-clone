@@ -9,7 +9,6 @@ export default function MainContentContainer() {
 		<div className='flex w-full h-screen justify-around overflow-y-scroll overflow-x-hidden'>
 			<div className='w-full md:max-w-[490px]'>
 				{/* <SliderContainer /> */}
-				<ModelContainer />
 				<SwiperSliderContainer />
 				{new Array(11).fill(0).map((val, index) => (
 					<PostContainer key={index} imageKey={index + 1}/>
