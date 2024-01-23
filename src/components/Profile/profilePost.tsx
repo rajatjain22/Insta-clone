@@ -2,6 +2,7 @@ import { FaTableCells } from 'react-icons/fa6';
 import saveIcon from '../../../public/save_icon.png';
 import Image from 'next/image';
 import { CgProfile, CgStories } from 'react-icons/cg';
+import { FaRegBookmark } from 'react-icons/fa';
 
 export default function ProfilePost() {
 	return (
@@ -31,12 +32,8 @@ export default function ProfilePost() {
 						<CgStories className='transform rotate-90' />
 						<span className='hidden md:block font-medium'>FEED</span>
 					</div>
-					<div className='flex items-center text-lg md:text-xs'>
-						<Image
-							src={saveIcon}
-							alt='save'
-							className='w-8'
-						/>
+					<div className='flex items-center text-lg md:text-xs gap-1'>
+						<FaRegBookmark />
 						<span className='hidden md:block font-medium'>SAVED</span>
 					</div>
 					<div className='flex items-center text-lg md:text-xs gap-1'>
@@ -53,7 +50,7 @@ export default function ProfilePost() {
 							className='relative'
 							key={imageIndex}>
 							<Image
-								className='h-auto max-w-full rounded-lg object-cover'
+								className='h-auto max-w-full rounded-lg object-cover aspect-square bg-transparent w-full'
 								src={`https://flowbite.s3.amazonaws.com/docs/gallery/square/image-${
 									imageIndex + 1
 								}.jpg`}
